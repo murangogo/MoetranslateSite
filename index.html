@@ -21,6 +21,7 @@
 							<div class="inner">
 								<h1>萌译v3.0.5 MoeTranslate</h1>
 								<p>让您和非中文游戏的距离不再遥远。</p>
+								<p>Download: <span id="downloadCount">Loading...</span></p>
 							</div>
 						</div>
 						<nav>
@@ -352,28 +353,41 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/main.js"></script>
 			<script>
     document.getElementById('downloadLink').addEventListener('click', function(event) {
-        event.preventDefault(); // 阻止链接的默认动作
-        const downloadUrl = this.href; // 保存原始下载URL
-
-        // 发送请求到后端API更新下载次数
-        fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.', {
-            method: 'POST',
-            // 其他需要的设置，例如headers
-        })
-        .then(response => {
-            if(response.ok) {
-                // 请求成功，跳转到下载URL
-                window.location.href = downloadUrl;
-            } else {
-                // 处理错误
-                console.error('更新失败');
-            }
-        })
-        .catch(error => {
+    event.preventDefault();
+    const downloadUrl = this.href;
+    fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.')
+    .then(response => {
+        if(response.ok) {
+            window.location.href = downloadUrl;
+        } else {
+            console.error('更新失败');
+        }
+    })
+	.catch(error => {
             // 处理连接错误
             console.error('请求错误', error);
         });
+});
+
+function loadDownloadCount() {
+    fetch('https://battle.moetranslate.top/api/updatecount?type=check')
+    .then(response => response.json())
+    .then(data => {
+        if(data.mynum !== undefined) {
+            document.getElementById('downloadCount').textContent = data.mynum;
+        } else {
+            document.getElementById('downloadCount').textContent = 'Failed';
+        }
+    })
+    .catch(error => {
+        console.error('下载次数加载失败:', error);
+        document.getElementById('downloadCount').textContent = 'Error';
     });
+}
+
+window.onload = function() {
+    loadDownloadCount();
+};
 </script>
 
 
