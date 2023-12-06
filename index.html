@@ -356,7 +356,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         const downloadUrl = this.href; // 保存原始下载URL
 
         // 发送请求到后端API更新下载次数
-        fetch('/api/updatecount', {
+        fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.', {
             method: 'POST',
             // 其他需要的设置，例如headers
         })
