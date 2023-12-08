@@ -355,7 +355,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
     document.getElementById('downloadLink').addEventListener('click', function(event) {
     event.preventDefault();
     const downloadUrl = this.href;
-    fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.')
+    fetch('http://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.')
     .then(response => {
         if(response.ok) {
             window.location.href = downloadUrl;
@@ -370,7 +370,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 });
 
 function loadDownloadCount() {
-    fetch('https://battle.moetranslate.top/api/updatecount?type=check')
+    fetch('http://battle.moetranslate.top/api/updatecount?type=check')
     .then(response => response.json())
     .then(data => {
         if(data.mynum !== undefined) {
