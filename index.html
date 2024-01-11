@@ -19,7 +19,7 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>萌译v3.0.5 MoeTranslate</h1>
+								<h1>萌译v3.9.5 MoeTranslate</h1>
 								<p>让您和非中文游戏的距离不再遥远。</p>
 								<p>Download: <span id="downloadCount">Loading...</span></p>
 							</div>
@@ -27,7 +27,7 @@
 						<nav>
 							<ul>
 								<li><a href="https://space.bilibili.com/151100964">B站空间</a></li>
-								<li><a href="https://www.123pan.com/s/2f38Vv-5o4zH.html" id="downloadLink">下载</a></li>
+								<li><a href="https://www.123pan.com/s/2f38Vv-COpzH.html" id="downloadLink">下载</a></li>
 								<li><a href="#work">测试版</a></li>
 								<li><a href="#about">微信公众号</a></li>
 								<li><a href="https://github.com/murangogo/MoeTranslate">Git Hub</a></li>
@@ -48,18 +48,12 @@
 						<!-- Work -->
 							<article id="work">
 								<h2 class="major">测试版</h2>
-								<p>开发者正在开发4.0.0版本！想看看新版本是什么样就来下载吧！</p>
-								<p>目前最新测试版本：4.0.24.1.11.1-prerelease，版本号：14</p>
-								<p>较正式版（3.0.5）变化：</p>
-								<p>-- 兼容Android 14；</p>
-								<p>-- 删除Claude聊天（因为Claude只有30天免费时间），添加Google的Gemini聊天，但需要科学上网；</p>
-								<p>-- 应用内图标重绘。</p>
-								<p>注意，测试版可能有Bug哦！</p>
-								<nav>
+								<p>目前没有测试版哦！</p>
+								<!-- <nav>
 									<ul>
 										<li><a href="https://www.123pan.com/s/2f38Vv-tNpzH.html" id="downloadLink2">下载测试版⬅点我下载！</a></li>
 									</ul>
-								</nav>
+								</nav> -->
 							</article>
 
 						<!-- About -->
@@ -105,23 +99,23 @@
         });
 });
 
-document.getElementById('downloadLink2').addEventListener('click', function(event) {
-    event.preventDefault();
-    const downloadUrl = this.href;
-    fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.')
-    .then(response => {
-        if(response.ok) {
-            window.location.href = downloadUrl;
-        } else {
-			window.location.href = downloadUrl;
-            console.error('更新失败');
-        }
-    })
-	.catch(error => {
-            // 处理连接错误
-            console.error('请求错误', error);
-        });
-});
+// document.getElementById('downloadLink2').addEventListener('click', function(event) {
+//     event.preventDefault();
+//     const downloadUrl = this.href;
+//     fetch('https://battle.moetranslate.top/api/updatecount?type=update&permission=.7295.')
+//     .then(response => {
+//         if(response.ok) {
+//             window.location.href = downloadUrl;
+//         } else {
+// 			window.location.href = downloadUrl;
+//             console.error('更新失败');
+//         }
+//     })
+// 	.catch(error => {
+//             // 处理连接错误
+//             console.error('请求错误', error);
+//         });
+// });
 
 function loadDownloadCount() {
     fetch('https://battle.moetranslate.top/api/updatecount?type=check')
