@@ -1,5 +1,5 @@
 {
-    "versionCode": 15,
-    "versionName": "3.9.5",
-    "versionContent": "\n重要更新：\n兼容Android 14；\n删除Claude聊天（因为Claude只有30天免费时间），添加Google的Gemini聊天，但需要科学上网；\n应用内图标重绘。\n此外，之前计划的萌译重构，现在正在开发中。\n"
+    "versionCode": 16,
+    "versionName": "3.9.6",
+    "versionContent": "\n普通更新：\n修改了几处文本。\n"
 }
