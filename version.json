@@ -1,5 +1,5 @@
 {
-    "versionCode": 16,
-    "versionName": "3.9.6",
-    "versionContent": "\n普通更新：\n修改了几处文本。\n"
+    "versionCode": 17,
+    "versionName": "3.9.7",
+    "versionContent": "\n普通更新：\n修复Gemini对话的闪退bug。\n"
 }
